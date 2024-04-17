@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <queue>
+#include <vector>
 #include "EmpCompare.h"
 #include "Employee.h"
 #include "Star2.h"
@@ -11,6 +12,27 @@ using namespace std;
 
 
 int main() {
+
+    const vector<int> data = { 10, 2, 4, 8, 6, 9 };
+    // defining priority queue
+    priority_queue<int> pq;
+    // printing array
+    cout << "Vector: ";
+        for (auto i : data) {
+            cout << i << ' ';
+        }
+    cout << endl;
+
+    // pushing array sequentially one by one
+    for (int i = 0; i < 6; i++) {
+        pq.push(data[i]);
+    }
+    // printing priority queue
+    cout << "Priority Queue: ";
+    while (!pq.empty()) {
+        cout << pq.top() << ' ';
+        pq.pop();
+    }
     // Priority queue of employees
     priority_queue<Employee, deque<Employee>, EmpComp2> empQueue;
 

@@ -36,6 +36,11 @@ double Star2::intensity() const
     return calculatedIntensity;
 }
 
+bool Star2::operator<(const Star2& star2) const
+{
+    return false;
+}
+
 
 
 Star2::Star2(string id, double dist)
